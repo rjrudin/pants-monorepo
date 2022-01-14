@@ -15,4 +15,4 @@ To set this up using Pants, I've done the following per the [Pants getting start
 2. Added `enabled=false` to `[anonymous-telemtry]` in `pants.toml` to make the telemetry warning 
    go away
 3. Added a .gitignore file 
-4. 
+4. Added source roots to `pants.toml` of - app1, app2, lib1, lib2
