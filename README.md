@@ -16,3 +16,43 @@ To set this up using Pants, I've done the following per the [Pants getting start
    go away
 3. Added a .gitignore file 
 4. Added source roots to `pants.toml` of - app1, app2, lib1, lib2
+5. Enabled the Python backend
+
+Logging from running `./pants tailor`:
+
+```
+08:48:59.25 [INFO] Initializing scheduler...
+08:48:59.48 [INFO] Scheduler initialized.
+Created app1/BUILD:
+  - Add python_sources target app1
+  - Add macro python_requirements
+Created app2/BUILD:
+  - Add python_sources target app2
+  - Add macro python_requirements
+Created lib1/BUILD:
+  - Add python_sources target lib1
+  - Add macro python_requirements
+Created lib2/BUILD:
+  - Add python_sources target lib2
+  - Add macro python_requirements
+```
+
+At this point, something seems off because if I run `./pants dependencies`, I only see the lib1
+dependency:
+
+```
+app1/__init__.py
+app1/app1_main.py
+app1:requirements.txt
+app2/__init__.py
+app2/app2_main.py
+app2:requirements.txt
+lib1/__init__.py
+lib1/my_lib1.py
+lib1:pandas
+lib1:requirements.txt
+lib2/__init__.py
+lib2/my_lib2.py
+lib2:requirements.txt
+```
+
