@@ -78,3 +78,6 @@ thinking that if I use the approach above - declaring test dependencies (includi
 separate requirements_test.txt file that I then register in my BUILD file - that Pants would then 
 use that version of Pytest. 
 
+**QUESTION** In Java/Gradle projects, I use dependencies to declare that app1 depends on lib1 
+and app2 depends on lib1 and lib2. I don't see how to do that yet; it seems like any project can 
+depend on any other project. Is that correct? 
