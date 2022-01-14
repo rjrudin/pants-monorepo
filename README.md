@@ -3,6 +3,8 @@ and app2 - and two "library" projects - lib1 and lib2. Additionally, I want to u
 PyCharm, which means PyCharm should understand which modules and dependencies are available for 
 each project, and I should be able to run tests on each project as well. 
 
+I'm using Python 3.9.9 and running this on MacOS 11.6.2.
+
 The setup I have here is - app1 depends on lib1, while app2 depends on both lib1 and lib2. Each 
 project has a requirements.txt file; the dependencies themselves do not matter, they're just there 
 to ensure that each application project can gain the dependencies of each library project that it 
@@ -56,3 +58,8 @@ lib2/my_lib2.py
 lib2:requirements.txt
 ```
 
+6. I next create a venv named "env" and configure PyCharm to use that as the interpreter. 
+7. To make PyCharm happy, I run "pip install" on each of the 4 requirements files, though this 
+   of course results in the single heavyweight venv that the Pants docs say I shouldn't need. 
+   But I'm at least now able to code in PyCharm.
+8. 
