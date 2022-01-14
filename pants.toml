@@ -3,3 +3,11 @@ pants_version = "2.9.0"
 
 [anonymous-telemetry]
 enabled=false
+
+[source]
+root_patterns = [
+  '/app1',
+  '/app2',
+  '/lib1',
+  '/lib2',
+]
