@@ -58,8 +58,23 @@ lib2/my_lib2.py
 lib2:requirements.txt
 ```
 
+**QUESTION** Why is the lib1 dependency the only one to show up from a requirements.txt file?
+
 6. I next create a venv named "env" and configure PyCharm to use that as the interpreter. 
 7. To make PyCharm happy, I run "pip install" on each of the 4 requirements files, though this 
    of course results in the single heavyweight venv that the Pants docs say I shouldn't need. 
    But I'm at least now able to code in PyCharm.
-8. 
+8. I then add test_my_lib1.py to lib1 and run `./pants tailor`. I'm then able to run `./pants 
+   test ::` successfully. However, I can't run the test in PyCharm yet since pytest is not yet 
+   in my venv. 
+
+**QUESTION** What is the recommended approach for running a test in PyCharm? In my non-Pants 
+project, we have a separate requirements_test.txt file for declaring test dependencies. I could do
+the same thing here and then "pip install" those into the venv and also add that file to my BUILD
+file. 
+
+**QUESTION** I'm also wondering how I control which version of Pytest is used by Pants. I am 
+thinking that if I use the approach above - declaring test dependencies (including Pytest) via a 
+separate requirements_test.txt file that I then register in my BUILD file - that Pants would then 
+use that version of Pytest. 
+
